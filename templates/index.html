@@ -1,0 +1,745 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Car Rental</title>
+<!-- for-mobile-apps -->
+	<!-- Start of  Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=004571c1-cf4b-4d25-8a2e-d6c9feb10992"> </script>
+<!-- End of  Zendesk Widget script -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Car Rental Responsive" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/user/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/user/css/galleryeffect.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="/assets/user/css/jquery.flipster.css">
+<link rel='stylesheet' href='/assets/user/css/dscountdown.css' type='text/css' media='all' />
+<link href="/assets/user/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/user/css/font-awesome.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+
+	<script type="application/x-javascript" >
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //Meta tags -->
+	<!-- Stylesheet -->
+	<link href="/assets/booking/css/wickedpicker.css" rel="stylesheet" type='text/css' media="all" />
+	<link rel="stylesheet" href="/assets/booking/css/jquery-ui.css" />
+	<link href="/assets/booking/css/style.css" rel='stylesheet' type='text/css' />
+	<!-- //Stylesheet -->
+	<!--fonts-->
+    <link href="/assets/user/css/font-awesome.css" rel="stylesheet">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+	<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Montserrat+Alternates:200,400,500,600,700" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark " style="background-color:black;">
+     <div class="d-inline mt-10">
+		 <h1 style="width:190px;height:90px;padding:10px;margin-left:20px;"><a class="navbar-brand text-light" href="index.html"><span class="logo-v text-info">V</span><i class="fa fa-car" style="color:white"></i>Rental</a><p class="sub-cap" style="color:white">Drive to Any where</p></h1>
+	 </div>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <div class="navbar-nav ml-auto">
+            <a href="/user/index/" class="nav-item nav-link" style="font-size:20px;">Home</a>
+			{% if request.session.role == 1%}
+			<a href="/manager/dashboard/" class="nav-item nav-link" style="font-size:20px;">Dashboard</a>
+			{% endif %}
+			{% if request.session.role == 3%}
+			<a href="/business/businessdashboard/" class="nav-item nav-link" style="font-size:20px;">Dashboard</a>
+
+
+			{% endif %}
+
+			<a href="/user/cards/" class="nav-item nav-link" style="font-size:20px;">Deals</a>
+			<a href="/user/signup/" class="nav-item nav-link" style="font-size:20px;">Sign Up</a>
+            <a href="/user/policy/" class="nav-item nav-link text-secondary" style="font-size:20px;">Policy</a>
+            {% if request.session.Authentication == True %}
+			<a href="/user/account/" class="nav-item nav-link" style="font-size:20px;">Profile</a>
+				{% endif %}
+
+			<div class="login">
+				{% if request.session.Authentication == True %}
+				<div id="logoutContainer"><a href="/user/logout/" id="logoutButton" class="nav-item nav-link" style="font-size:20px;"><span>Logout</span></a>
+					{% else %}
+					<div id="loginContainer"><a href="/user/login/"  id="loginButton" class="nav-item nav-link" style="font-size:20px;"><span>Login</span></a>
+						{% endif %}
+
+				</div>
+			</div>
+
+		</div>
+
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+<!-- banner -->
+<div class="banner-w3ls" id="home">
+<div class="container-fluid">
+<h2>Coming Soon</h2>
+<h3 class="text-info">We are ready to launch our New Car</h3>
+	    <div class="agileits-timer">
+			<div class="main-title">
+				<div class="demo2"></div>
+			</div>
+
+		</div>
+
+		<!--//timer-->
+		<div class="callbacks_container">
+
+	    </div>
+
+</div>
+</div>
+<!-- //banner -->
+<!-- bootstrap-pop-up -->
+	<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+				<section>
+					<div class="modal-body">
+					       <h3 class="agileinfo_sign">BEFRIEND</h3>
+						<img src="/assets/user/images/s1.jpg" alt=" " class="img-responsive" />
+						<p>Ut enim ad minima veniam, quis nostrum
+							exercitationem ullam corporis suscipit laboriosam,
+							nisi ut aliquid ex ea commodi consequatur.
+							<i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit .</i></p>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+<!-- //bootstrap-pop-up -->
+<!-- /banner-bottom -->
+	<div class="banner-bottom">
+				<!--//screen-gallery-->
+				 <div class="wthree_title_agile">
+						        <h3>Glimpse <span>of</span> Vehicles</h3>
+				</div>
+						 <p class="sub_para">It’s time to drive</p>
+						  <div class="inner_w3l_agile_grids">
+						<div class="sreen-gallery-cursual">
+
+						       <div id="owl-demo" class="owl-carousel">
+							      <div class="item-owl">
+					                		<div class="test-review">
+						                	  <img src="/assets/user/images/s1.jpg" class="img-responsive" alt=""/>
+
+					                	    </div>
+					                </div>
+					                 <div class="item-owl">
+					                	<div class="test-review">
+						                	  <img src="/assets/user/images/s6.jpg" class="img-responsive" alt=""/>
+					                	    </div>
+					                </div>
+					                 <div class="item-owl">
+					                	    <div class="test-review">
+						                	  <img src="/assets/user/images/s5.jpg" class="img-responsive"  alt=""/>
+
+					                	    </div>
+					                </div>
+									 <div class="item-owl">
+					                	    <div class="test-review">
+						                	  <img src="/assets/user/images/s2.jpg" class="img-responsive" alt=""/>
+
+					                	    </div>
+					                </div>
+									<div class="item-owl">
+					                	    <div class="test-review">
+						                	  <img src="/assets/user/images/s3.jpg" class="img-responsive" alt=""/>
+
+					                	    </div>
+					                </div>
+					                 <div class="item-owl">
+					                		<div class="test-review">
+						                	  <img src="/assets/user/images/s4.jpg" class="img-responsive" alt=""/>
+					                	    </div>
+					                </div>
+									 <div class="item-owl">
+					                		<div class="test-review">
+						                	  <img src="/assets/user/images/g4.jpg" class="img-responsive" alt=""/>
+
+					                	    </div>
+					                </div>
+					                 <div class="item-owl">
+					                	<div class="test-review">
+						                	  <img src="/assets/user/images/g5.jpg" class="img-responsive" alt=""/>
+
+					                	    </div>
+					                </div>
+					                 <div class="item-owl">
+					                	    <div class="test-review">
+						                	  <img src="/assets/user/images/g6.jpg" class="img-responsive" alt=""/>
+					                	    </div>
+					                </div>
+									 <div class="item-owl">
+					                	    <div class="test-review">
+						                	  <img src="/assets/user/images/g7.jpg" class="img-responsive" alt=""/>
+
+					                	    </div>
+					                </div>
+									 <div class="item-owl">
+					                	    <div class="test-review">
+						                	  <img src="/assets/user/images/g8.jpg" class="img-responsive" alt=""/>
+
+					                	    </div>
+					                </div>
+									 <div class="item-owl">
+					                	    <div class="test-review">
+						                	  <img src="/assets/user/images/g9.jpg" class="img-responsive" alt=""/>
+
+					                	    </div>
+					                </div>
+								   <div class="item-owl">
+					                	    <div class="test-review">
+						                	  <img src="/assets/user/images/s7.jpg" class="img-responsive" alt=""/>
+
+					                	    </div>
+					                </div>
+				              </div>
+						<!--//screen-gallery-->
+				</div>
+		  </div>
+ </div>
+
+<!-- //banner-bottom -->
+
+
+<!-- about -->
+ <div class="wthree_title_agile two">
+						        <h3>About <span>Us</span></h3>
+ </div>
+<p class="sub_para two text-info" >It’s time to drive</p>
+<div class="about" id="about">
+
+		<div class="container">
+
+
+		 <div class="inner_w3l_agile_grids">
+            <div class="col-md-6 about-left-w3layouts" style="width:500px;height:300px;background-color:black;opacity:0.7;margin-top:210px;">
+
+				<h6 class="sub">WELCOME TO OUR Rental Car</h6>
+				<p style="padding-top:5px;">VRental is a vehicle hire rental company that rents automobiles for short periods of time generally ranging from a few weeks
+					.It donot provide only four wheelers but also provides with two wheelers.
+				    Alongside the basic rental of a vehicle,it also provides extra products like insurance,global positioning system,navigation system,entertainment,portable WiFi and child safety seats.
+				</p>
+			</div>
+			<div class="col-md-6 about-right-w3layouts">
+
+
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+ </div>
+<!--about-section-->
+
+
+
+
+<div class="working" style="margin-top:70px;">
+	 <div class="wthree_title_agile two">
+	 <h3 style="padding-top:40px;padding-bottom:50px;">Working <span> of </span> VehicleRental</h3>
+     </div>
+	<div class="row" style="margin-left:180px;">
+		<div class="col-md-2" style="margin-left:40px;">
+			 <div class="flip-card">
+				  <div class="flip-card-inner">
+					<div class="flip-card-front">
+					  <img src="/media/booking1.jpg" alt="Avatar" style="width:200px;height:150px;">
+					</div>
+					<div class="flip-card-back">
+					  <h1 style="font-size:20px;padding-top:20px;">Book</h1>
+					  <p>Search for and book a car on our site!</p>
+
+					</div>
+				  </div>
+              </div>
+		</div>
+		<div class="col-md-2" style="margin-left:40px;">
+			 <div class="flip-card">
+				  <div class="flip-card-inner">
+					<div class="flip-card-front">
+					  <img src="/media/rental-car-.jpg" alt="Avatar" style="width:200px;height:150px;">
+					</div>
+					<div class="flip-card-back">
+					  <h1 style="font-size:20px;">Upload License</h1>
+					  <p>Upload your driver’s license, and pay a small security deposit.</p>
+
+					</div>
+				  </div>
+              </div>
+		</div>
+		<div class="col-md-2" style="margin-left:40px;">
+			 <div class="flip-card">
+				  <div class="flip-card-inner">
+					<div class="flip-card-front">
+					  <img src="/media/drive.jpg" alt="Avatar" style="width:200px;height:150px;">
+					</div>
+					<div class="flip-card-back">
+					  <h1 style="font-size:20px;padding-top:20px;">Drive</h1>
+					  <p>Grab the keys and drive.</p>
+
+					</div>
+				  </div>
+              </div>
+
+		</div>
+		<div class="col-md-2" style="margin-left:40px;">
+			<div class="flip-card">
+				  <div class="flip-card-inner">
+					<div class="flip-card-front">
+					  <img src="/media/return.png" alt="Avatar" style="width:200px;height:150px;">
+					</div>
+					<div class="flip-card-back">
+					  <h1 style="font-size:20px;padding-top:20px;">Return</h1>
+					  <p>Return the car to the same location </p>
+
+					</div>
+				  </div>
+              </div>
+		</div>
+	</div>
+</div>
+
+<!-- about -->
+<div class="services" id="service" style="margin-top:70px;">
+		<div class="container">
+				 <div class="wthree_title_agile">
+						        <h3> Upcoming<span>Deals This</span> Month</h3>
+				</div>
+						 <p class="sub_para">It’s time to drive</p>
+						  <div class="inner_w3l_agile_grids">
+				<div class="col-md-4 agileits_service_grid_btm_left">
+					<div class="agileits_service_grid_btm_left1">
+						<div class="agileits_service_grid_btm_left2">
+							<h5>Deal 1</h5>
+
+							<p>Mon, Tue, Thu, Fri, Sat</p>
+							<p>Go to Deals to grab the offer</p>
+                           </div>
+						<img src="/assets/user/images/s3.jpg" alt=" " class="img-responsive">
+					</div>
+
+
+				</div>
+				<div class="col-md-4 agileits_service_grid_btm_left">
+					<div class="agileits_service_grid_btm_left1">
+						<div class="agileits_service_grid_btm_left2">
+							<h5>Deal 2</h5>
+
+							<p>Mon, Tue, Thu, Fri, Sat</p>
+							<p>Go to Deals to grab the offer</p>
+						</div>
+						<img src="/assets/user/images/s5.jpg" alt=" " class="img-responsive">
+					</div>
+				</div>
+				<div class="col-md-4 agileits_service_grid_btm_left">
+					<div class="agileits_service_grid_btm_left1">
+						<div class="agileits_service_grid_btm_left2">
+						<h5>Deal 3</h5>
+							<p>Mon, Tue, Thu, Fri, Sat</p>
+							<p>Go to Deals to grab the offer</p>
+						</div>
+						<img src="/assets/user/images/s1.jpg" alt=" " class="img-responsive">
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		</div>
+	<!--//service-section-->
+<!--//team-section-->
+
+
+<div class="counteronweb" style="background-color:black;height:300px;margin-top:60px;">
+		<div class="row text-center" style="padding-left:50px;padding-right:50px;">
+
+			<div class="col" style="margin-top:40px;">
+
+				  <i class="far fa-smile" style="font-size:46px;color:white"></i>
+				  <p class="count-text " style="color:white;font-size:20px;">Happy Clients</p>
+				  <div class="counter">300
+				  </div>
+	        </div>
+			<div class="col" style="margin-top:40px;">
+
+				  <i class="far fa-smile" style="font-size:46px;color:white"></i>
+				  <p class="count-text " style="color:white;font-size:20px;">Active Booking</p>
+				  <div class="counter">50
+				  </div>
+	        </div>
+			<div class="col" style="margin-top:40px;">
+
+				  <i class='fas fa-motorcycle' style='font-size:48px;color:white'></i>
+				  <p class="count-text " style="color:white;font-size:20px;">Bike & Scooter in Stock</p>
+				  <div class="counter">200
+				  </div>
+	        </div>
+			  <div class="col" style="margin-top:40px;">
+
+				  <i class="fa fa-car" style="font-size:46px;color:white"></i>
+				  <p class="count-text " style="color:white;font-size:20px;">Cars in stock</p>
+			      <div class="counter">300
+			      </div>
+	        </div>
+
+		</div>
+
+			<div class="clearfix"></div>
+</div>
+
+
+
+<div class="services" style="margin-top:170px;">
+	 <div class="wthree_title_agile">
+						        <h3 style="padding-bottom:70px;"> Vehicle <span>Rental </span> Advantages</h3>
+				</div>
+	  <div class="card-deck">
+    <div class="card mb-4" style="min-width: 400px;height:130px;margin-left:30px;">
+          <div class="row no-gutters">
+            <div class="col-md-4" style="padding-left:40px;padding-top:30px;">
+
+                <img src="https://img.icons8.com/flat_round/64/000000/gas-station.png">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                  <h5 class="card-title">Fuel Cost included</h5>
+                <p class="card-text" style="font-size:12px;">Don't worry about mileage! All fuel costs are included. If you refill fuel, we'll pay you back!
+              </div>
+            </div>
+          </div>
+    </div>
+
+     <div class="card mb-4" style="min-width: 400px;height:130px;margin-left:30px;">
+          <div class="row no-gutters">
+            <div class="col-md-4" style="padding-left:40px;padding-top:30px;">
+                <img src="https://img.icons8.com/dusk/64/000000/no-hidden-fee.png">
+
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">No Hidden Charges</h5>
+                <p class="card-text" style="font-size:12px;">Our prices include taxes and insurance.
+What you see is what you really pay!</p>
+              </div>
+            </div>
+          </div>
+    </div>
+     <div class="card mb-4" style="min-width: 400px;height:130px;margin-left:30px;margin-right:30px;">
+          <div class="row no-gutters">
+            <div class="col-md-4" style="padding-left:40px;padding-top:30px;">
+                <img src="https://img.icons8.com/office/48/000000/packaging.png">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Flexi Pricing Packages</h5>
+                <p class="card-text" style="font-size:12px;">One size never fits all! Choose a balance of time and kilometers that works best for you.
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+
+
+    <div class="card mb-4" style="min-width: 400px;height:130px;margin-left:30px;">
+          <div class="row no-gutters">
+            <div class="col-md-4" style="padding-left:40px;padding-top:30px;">
+               <img src="https://img.icons8.com/officel/48/000000/marker.png">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Go Anywhere</h5>
+                <p class="card-text" style="font-size:12px;">Our cars have all-India permits.  Just remember to pay state tolls and entry taxes.
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="card mb-4" style="min-width: 400px;height:130px;margin-left:30px;">
+          <div class="row no-gutters">
+            <div class="col-md-4" style="padding-left:40px;padding-top:30px;">
+                <img src="https://img.icons8.com/color/48/000000/last-24-hours--v1.png">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">24*7 Roadside Assistane </h5>
+                <p class="card-text" style="font-size:12px;">We have round-the-clock, pan India partners. Help is never far away from you.
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="card mb-4" style="min-width: 400px;height:130px;margin-left:30px;margin-right:30px;">
+          <div class="row no-gutters">
+            <div class="col-md-4" style="padding-left:40px;padding-top:30px;">
+                <img src="https://img.icons8.com/color/48/000000/guarantee.png">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Damange Insurance</h5>
+                <p class="card-text" style="font-size:12px;">All your bookings include damage insurance! Drive safe, but don’t worry!
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+
+
+
+
+</div>
+</div>
+<!--//team-section-->
+<!-- //gallery -->
+<!-- /contact -->
+	<div class="map-w3ls" >
+				 <div class="wthree_title_agile">
+					 <h3> Contact <span>Us</span>  </h3>
+				</div>
+		<p class="sub_para">It’s time to drive</p>
+		<div class="contact-agile" id="contact">
+		<div class="contact-middle">
+					<h4>Say Hello</h4>
+					<form method="post">
+						{% csrf_token %}
+					<div class="form-agileinfo">
+					<div class="input-w3ls">
+						<p>Your Name</p>
+						<input type="text" name="name" placeholder="" required="" />
+					</div>
+					<div class="input-w3ls">
+						<p>Your Email</p>
+						<input type="email" name="email" placeholder="" required="" />
+					</div>
+					</div>
+					<div class="form-agileits-w3layouts">
+					<p>Your Comments</p>
+						<textarea  name="message" placeholder="" required="" ></textarea>
+							<input type="submit"   value="Send message">
+					</div>
+					<div class="clearfix"></div>
+					</form>
+				</div>
+			<div class="contact-left">
+					<h6>Sector 34-a ,Chandigarh</h6>
+					<p>8847310798</p>
+					<p><a href="mailto:dkaur4381@gmail.com">dkaur4381@gmail.com</a></p>
+					<h6>Opening Hours</h6>
+					<p>Monday-Sunday</p>
+						<p>12.00AM-12.00PM</p>
+				</div>
+
+		</div>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6859.898776774391!2d76.76120817593284!3d30.719823199903825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fedb31e8ed0a9%3A0x8141001a035f4071!2sSector+34%2C+Chandigarh!5e0!3m2!1sen!2sin!4v1565557168213!5m2!1sen!2sin"  frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div>
+<!-- //contact -->
+
+<!-- footer -->
+	<div class="newsletter">
+		<div class="container">
+			<div class="col-md-3 footer-grid">
+				<h3>About us</h3>
+				<p>VRental provides vehicles on rent both 2 wheelers and 4 wheelers.</p>
+<div class="w3ls_newsletter_social">
+				<ul class="agileits_social_list">
+					<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+
+				</ul>
+			</div>
+			</div>
+			<div class="col-md-3 footer-grid">
+			     <h3>Write Us At</h3>
+					<ul>
+
+						<li><a class="scroll" href="#" style="text-decoration:none;"><span class="glyphicon glyphicon-envelope" aria-hidden="true" style="padding-right:10px;"></span>dkaur4381@gmail.com</li>
+						<li><a class="scroll" href="#" style="text-decoration:none;"><span class="glyphicon glyphicon-envelope" aria-hidden="true" style="padding-right:10px;"></span>pandher04@gmail.com</li>
+
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<h3>Contact Us</h3>
+
+					<ul>
+
+						<li><a class="scroll" href="#" style="text-decoration:none;"><span class="glyphicon glyphicon-earphone" aria-hidden="true" style="padding-right:10px;"></span> 8874310798</a></li>
+						<li><a class="scroll" href="#" style="text-decoration:none;"><span class="glyphicon glyphicon-earphone" aria-hidden="true" style="padding-right:10px;"></span> 9915244277</a></li>
+
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<h3>Guided By</h3>
+					<ul>
+
+						<li><a class="scroll" href="#home">Mr.Daljit Singh</br>(Industry Mentor)</a></li>
+
+					</ul>
+			    </div>
+
+	</div>
+
+<!-- //gallery -->
+
+<!-- gallery -->
+<script type="text/javascript" src="/assets/user/js/jquery-2.1.4.min.js"></script>
+<!--scripts-->
+<!-- Counter required files -->
+		<script type="text/javascript" src="/assets/user/js/dscountdown.min.js"></script>
+		<script src="/assets/user/js/demo-1.js"></script>
+		<script>
+			jQuery(document).ready(function($){
+				$('.demo2').dsCountDown({
+					endDate: new Date("December 24, 2020 23:59:00"),
+					theme: 'black'
+					});
+			});
+		</script>
+	<!-- //Counter required files -->
+
+	<!--//scripts-->
+<script type="text/javascript" src="/assets/user/js/move-top.js"></script>
+<script type="text/javascript" src="/assets/user/js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<!--banner Slider starts Here-->
+						<script src="/assets/user/js/responsiveslides.min.js"></script>
+							<script>
+								// You can also use "$(window).load(function() {"
+								$(function () {
+								  // Slideshow 4
+								  $("#slider3").responsiveSlides({
+									auto: true,
+									pager:true,
+									nav:false,
+									speed: 500,
+									namespace: "callbacks",
+									before: function () {
+									  $('.events').append("<li>before event fired.</li>");
+									},
+									after: function () {
+									  $('.events').append("<li>after event fired.</li>");
+									}
+								  });
+
+								});
+							 </script>
+							<script src="/assets/user/js/modernizr.custom.js"></script>
+
+
+	<script src="/assets/user/js/jquery.flipster.js"></script>
+<script>
+
+	$(function(){ $(".flipster").flipster({ style: 'carousel', start: 0 }); });
+
+
+</script>
+
+
+<script>
+jQuery(window).scroll(startCounter);
+function startCounter() {
+    var hT = jQuery('.counteronweb').offset().top,
+        hH = jQuery('.counteronweb').outerHeight(),
+        wH = jQuery(window).height();
+    if (jQuery(window).scrollTop() > hT+hH-wH) {
+        jQuery(window).off("scroll", startCounter);
+        jQuery('.counter').each(function () {
+            var $this = jQuery(this);
+            jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+                duration: 2000,
+                easing: 'swing',
+                step: function () {
+                    $this.text(Math.ceil(this.Counter));
+                }
+            });
+        });
+    }
+}
+</script>
+<!--banner Slider starts Here-->
+							 <!-- required-js-files-->
+							<link href="/assets/user/css/owl.carousel.css" rel="stylesheet">
+							    <script src="/assets/user/js/owl.carousel.js"></script>
+							        <script>
+							    $(document).ready(function() {
+							      $("#owl-demo").owlCarousel({
+							        items :5,
+									itemsDesktop : [768,4],
+									itemsDesktopSmall : [414,3],
+							        lazyLoad : true,
+							        autoPlay : true,
+							        navigation :true,
+
+							        navigationText :  false,
+							        pagination :false,
+
+							      });
+
+							    });
+							    </script>
+								 <!--//required-js-files-->
+<!-- smooth scrolling -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+		/*
+			var defaults = {
+			containerID: 'toTop', // fading element id
+			containerHoverID: 'toTopHover', // fading element hover id
+			scrollSpeed: 1200,
+			easingType: 'linear'
+			};
+		*/
+		$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- //smooth scrolling -->
+<script type="text/javascript" src="/assets/user/js/bootstrap.js"></script>
+<script type="text/javascript" language="javascript" src="datetimepicker/js/bootstrap-datetimepicker.js"></script>
+
+</body>
+</html>

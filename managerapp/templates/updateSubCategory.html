@@ -1,0 +1,15 @@
+{% extends 'adminmaster.html' %}
+{% block content %}
+<div class="content">
+<div class="women_main">
+<div class="addCategory">
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="subcategory" placeholder="Add Category" value="{{subcatdata.subcat_type}}">
+    <input type="submit" class="btn btn-danger" value="Add">
+</form>
+</div>
+</div>
+</div>
+
+{% endblock %}

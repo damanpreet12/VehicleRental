@@ -1,0 +1,77 @@
+{% extends 'usermasterpage.html' %}
+
+{% block content %}
+
+<div class="container d-flex justify-content-center">
+
+ <div class="form_grping">
+  <form enctype="multipart/form-data" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+          <div class="top">LOGIN</div>
+
+      </div>
+
+    {% if emailerror %}
+    <p>Email is incorrect</p>
+
+    {% endif %}
+      <div class="form-group">
+          <label><i class="fa fa-user"></i><strong> Email </strong></label>
+
+          <input type="email" class="form-control" name="email" placeholder="Enter Email" required="">
+      </div>
+      {% if activeerror %}
+    <p>Account is not active yet</p>
+
+    {% endif %}
+      <div class="form-group">
+          <label><i class="fa fa-unlock-alt"></i><strong> Password </strong></label>
+          <input type="password" class="form-control" name="password" placeholder="Enter Password" required="" id="myInput">
+      </div>
+      {% if passworderror %}
+    <p>Password is incorrect</p>
+
+    {% endif %}
+      <div class="form-group">
+
+            <input id="check" name="check" type="checkbox" value="show password" onclick="myFunction()" >
+            <label class="check" for="check"><strong>Show password</strong></label>
+
+
+            <a style="float:right;color:white" href="/user/forget/"><strong>Forgot password?</strong></a>
+      <div class="clearfix"></div>
+      </div>
+      <div class="form-group d-flex justify-content-center">
+          <button type="submit" class="btn btn-info" style="padding-left:80px;
+        padding-right:90px;"><strong>Login</strong></button>
+      </div>
+      <div style="padding-top:10px;">
+          <h6 class="d-flex justify-content-center" ><a href="/user/signup/" style="color:white"><strong>Create new account</strong></a></h6>
+
+      </div>
+      <div class="d-flex flex-column" style="padding-top:30px;">
+            <h5 class="d-flex justify-content-center">OR</h5>
+            <h6  class="d-flex justify-content-center mb-3">Login using social media to get quick access</h6>
+
+      </div>
+      <ul class="social-network social-circle">
+           <li ><a href="https://www.facebook.com/" class="icoFacebook" title="Facebook"><i class="fab fa-facebook"></i></a></li>
+           <li><a href="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+           <li><a href="https://accounts.google.com/login" class="icoGoogle" title="Google "><i class="fab fa-google"></i></a></li>
+      </ul>
+
+  </form>
+</div>
+</div>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myInput");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+{% endblock %}

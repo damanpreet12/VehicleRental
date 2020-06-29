@@ -1,0 +1,51 @@
+from django.db import models
+
+# Create your models here.
+class UserRole(models.Model):
+    roleid=models.AutoField(primary_key=True)
+    rolename=models.CharField(max_length=200,default="",unique=True)
+class UserInfo(models.Model):
+    roleid=models.ForeignKey(UserRole,on_delete=models.CASCADE)
+    username=models.CharField(max_length=200,default="")
+    email=models.CharField(max_length=200,default="",primary_key=True)
+    mobile=models.BigIntegerField(null=True)
+    city=models.CharField(max_length=200,default="")
+    address=models.CharField(max_length=400,default="")
+    isActive = models.BooleanField(default=False)
+    otp = models.CharField(max_length=200, default="",null=True)
+    token = models.CharField(max_length=200, default="",null=True)
+    time = models.CharField(max_length=200, default="",null=True)
+    password = models.CharField(max_length=200, default="")
+    vehicle_image1 = models.CharField(max_length=200,null=True)
+    codriver=models.CharField(max_length=200,null=True)
+    dob=models.CharField(max_length=200,null=True)
+    gender=models.CharField(max_length=200,null=True)
+class Document(models.Model):
+    email=models.ForeignKey(UserInfo,on_delete=models.CASCADE)
+    license=models.CharField(max_length=200,null=False)
+    livephoto=models.CharField(max_length=200,null=False)
+    secdocument=models.CharField(max_length=200,null=False)
+class userDocument(models.Model):
+    email=models.ForeignKey(UserInfo,on_delete=models.CASCADE)
+    license=models.CharField(max_length=200,null=False)
+    livephoto=models.CharField(max_length=200,null=False)
+    secdocument=models.CharField(max_length=200,null=False)
+    license_no=models.CharField(max_length=200,null=False)
+    secondary_name=models.CharField(max_length=200,null=False)
+    secondary_id_no=models.CharField(max_length=200,null=False)
+class UploadDocument(models.Model):
+    email=models.ForeignKey(UserInfo,on_delete=models.CASCADE)
+    license=models.CharField(max_length=200,null=False)
+    livephoto=models.CharField(max_length=200,null=False)
+    secdocument=models.CharField(max_length=200,null=False)
+    license_no=models.CharField(max_length=200,null=False)
+    secondary_name=models.CharField(max_length=200,null=False)
+    secondary_id_no=models.CharField(max_length=200,null=False)
+class UploadUserDocument(models.Model):
+    uemail=models.ForeignKey(UserInfo,on_delete=models.CASCADE)
+    ulicense=models.CharField(max_length=200,null=False)
+    ulivephoto=models.CharField(max_length=200,null=False)
+    usecdocument=models.CharField(max_length=200,null=False)
+    ulicense_no=models.CharField(max_length=200,null=False)
+    usecondary_name=models.CharField(max_length=200,null=False)
+    usecondary_id_no=models.CharField(max_length=200,null=False)

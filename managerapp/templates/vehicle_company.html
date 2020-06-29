@@ -1,0 +1,31 @@
+{% extends 'adminmaster.html' %}
+{% block content %}
+<div class="content">
+<div class="women_main" style="width:500px;height:300px;margin-left:400px;margin-top:70px">
+<div class="vehicleCompany">
+<form method="post">
+    {% csrf_token %}
+      <div>
+          <div class="" style="text-align:center;padding-top:30px;padding-bottom:30px;"><h4>Add Company</h4></div>
+
+        {% if categorydata %}
+
+        <select class="custom-select form-control" name="category" id="inputGroupSelect01" style="background-color:transparent;border:2px solid rgba(242,186,46,1);background-color:rgba(0, 0, 0, 0.42);color:white;">
+             <option selected>Choose...</option>
+        {% for i in categorydata %}
+            <option value="{{ i.category_id }}">{{ i.category_type }}</option>
+        {% endfor %}
+        </select>
+        {% endif %}
+      </div>
+    <div class="add" style="margin-top:20px">
+        <input type="text" name="company" placeholder="Add Company">
+        <input type="submit" class="btn btn-danger" value="Add">
+        <a href="/manager/viewcompany/" class="btn btn-danger" role="button">View</a>
+    </div>
+</form>
+</div>
+</div>
+</div>
+
+{% endblock %}

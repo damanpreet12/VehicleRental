@@ -1,0 +1,259 @@
+{% extends 'adminmaster.html' %}
+{% block content %}
+
+					<!-- //header-ends -->
+
+				<!--content-->
+<div class="content">
+<div class="women_main">
+	<!-- start content -->
+	<div class="catalog">
+ <form enctype="multipart/form-data" method="post">
+		{% csrf_token %}
+		<div class="content tab">
+
+				<div class="fo-top">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Name</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control1" name="name">
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+                <div class="fo-top">
+					<div class="form-group">
+						<label for="focusedinput" class="col-sm-2 control-label"> Vehicle Category</label>
+						<div class="col-sm-8">
+							<select name="cat_id" id="field-2" required="true" class="form-control">
+								<option value="">Choose..</option>
+								<option value="1">Car</option>
+								<option value="3">Bike</option>
+								<option value="2">Scooter</option>
+							</select>
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			    <div class="fo-top">
+					<div class="form-group">
+						<label for="focusedinput" class="col-sm-2 control-label"> Vehicle Sub-Category</label>
+						<div class="col-sm-8">
+							{% if subcatdata %}
+							<select name="subcat_id" id="field-2" required="true" class="form-control">
+								<option value="">Choose..</option>
+
+								{% for i in subcatdata %}
+								<option value="{{i.subcat_id}}">{{i.subcat_type}}</option>
+							    {% endfor %}
+							</select>
+							{% endif %}
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+                <div class="fo-top">
+					<div class="form-group">
+						<label for="focusedinput" class="col-sm-2 control-label">Company Name</label>
+						<div class="col-sm-8">
+							{% if companydata %}
+							<select name="company_id" id="field-2" required="true" class="form-control">
+								<option value="">Choose..</option>
+
+								{% for i in companydata %}
+								<option value="{{i.company_id}}">{{i.company_name}}</option>
+							    {% endfor %}
+							</select>
+							{% endif %}
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="fo-top">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Model</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control1" name="model">
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+
+				<div class="fo-top">
+					<div class="form-group">
+						<label for="focusedinput" class="col-sm-2 control-label">ABS</label>
+						<div class="col-sm-8">
+							<select  name="abs" id="field2" required="true" class="form-control">
+								<option value="">Choose..</option>
+								<option value="1">Yes</option>
+								<option value="0">No</option>
+								<option value="2">Dual</option>
+
+							</select>
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="fo-top">
+					<div class="form-group">
+						<label for="focusedinput" class="col-sm-2 control-label">Airbags</label>
+						<div class="col-sm-8">
+							<select name="airbags" id="field2" required="true" class="form-control">
+								<option value="">Choose..</option>
+								<option value="1">Yes</option>
+								<option value="0">No</option>
+
+							</select>
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="fo-top">
+					<div class="form-group">
+						<label for="focusedinput" class="col-sm-2 control-label">Seats</label>
+						<div class="col-sm-8">
+							<select name="seats" id="field-2" required="true" class="form-control">
+								<option value="">Choose..</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+							</select>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+                <div class="fo-top">
+					<div class="form-group">
+						<label for="focusedinput" class="col-sm-2 control-label">Transmission</label>
+						<div class="col-sm-8">
+							<select name="transmission" id="field-2" required="true" class="form-control">
+								<option value="">Choose..</option>
+								<option value="1">Automatic</option>
+								<option value="2">Manual</option>
+								<option value="3">CVT</option>
+
+							</select>
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			    <div class="fo-top">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Is Available</label>
+						<div class="col-sm-8">
+							<select name="available" id="field-2" required="true" class="form-control">
+								<option value="">Choose..</option>
+								<option value="1">Yes</option>
+								<option value="0">No</option>
+							</select>
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			    <div class="fo-top">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Description</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control1" name="description">
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			    <div class="fo-top">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Price</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control1" name="price">
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			    <div class="fo-top">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Images</label>
+						<div class="col-sm-8">
+						<input type="file" name="user_image" class="form_control1">
+							<br/>
+                        <input type="file" name="user_image2" class="form_control1">
+						<br/>
+                        <input type="file" name="user_image3" class="form_control1">
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+			<div>
+				 <button type="submit" class="btn btn-danger" class="form-control"  value="submit"><strong>Submit</strong></button>
+
+			</div>
+		</div>
+</form>
+
+	</div>
+
+
+
+	<!-- end content -->
+	<div class="foot-top">
+
+		<div class="col-md-6 s-c">
+			<li>
+				<div class="fooll">
+					<h1>follow us on</h1>
+				</div>
+			</li>
+			<li>
+				<div class="social-ic">
+					<ul>
+						<li><a href="#"><i class="facebok"> </i></a></li>
+						<li><a href="#"><i class="twiter"> </i></a></li>
+						<li><a href="#"><i class="goog"> </i></a></li>
+						<li><a href="#"><i class="be"> </i></a></li>
+							<div class="clearfix"></div>
+					</ul>
+				</div>
+			</li>
+				<div class="clearfix"> </div>
+		</div>
+		<div class="col-md-6 s-c">
+			<div class="stay">
+						<div class="stay-left">
+							<form>
+								<input type="text" placeholder="Enter your email" required="">
+							</form>
+						</div>
+						<div class="btn-1">
+							<form>
+								<input type="submit" value="join">
+							</form>
+						</div>
+							<div class="clearfix"> </div>
+			</div>
+		</div>
+			<div class="clearfix"> </div>
+
+</div>
+
+
+</div>
+			<!--content-->
+
+</div>
+
+{% endblock %}

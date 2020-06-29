@@ -1,0 +1,21 @@
+{% extends 'indexMaster.html' %}
+{% block content %}
+
+
+<h3 class="d-flex justify-content-center" style="padding-top:100px;padding-bottom:50px;">Your Account</h3>
+<div class="card-columns d-flex justify-content-center">
+  <div class="card bg-light" style="margin-left:100px;">
+    <div class="card-body text-center">
+        <h6>If you have want to return the vehicle click on return vehicle</h6>
+      <a class="card-text btn btn-info" href="/user/ubookingsonly_all/">Return Vehicle</a>
+    </div>
+  </div>
+  <div class="card bg-light" style="margin-left:100px;margin-right:100px;">
+    <div class="card-body text-center">
+        <h6>If you have want to cancel the order click on cancel</h6>
+      <a class="card-text btn btn-info" href="/user/canceluser/">Cancel Booking</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

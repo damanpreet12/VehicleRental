@@ -1,0 +1,19 @@
+{% extends 'adminmaster.html' %}
+{% block content %}
+<div class="content">
+<div class="women_main" style="width:500px;height:300px;margin-left:400px;margin-top:70px">
+<div class="addCategory">
+<form method="post">
+    {% csrf_token %}
+    <div class="" style="text-align:center;padding-top:30px;padding-bottom:30px;"><h4>Add Category</h4></div>
+    <div style="padding-left:30px;">
+    <input type="text" name="category" placeholder="Add Category">
+    <input type="submit" class="btn btn-danger" value="Add">
+    <a href="/manager/viewcategory/" class="btn btn-danger" role="button">View</a>
+    </div>
+</form>
+</div>
+</div>
+</div>
+
+{% endblock %}

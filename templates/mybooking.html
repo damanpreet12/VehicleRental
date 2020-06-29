@@ -1,0 +1,64 @@
+{% extends 'indexMaster.html' %}
+{% block content %}
+<div class="container">
+    <form method="post" enctype="multipart/form-data">
+               {% csrf_token %}
+    <div class="row" style="padding-top:60px;">
+    <div class="col-md-3" style="border:1px solid grey;">
+    <div class="d-flex justify-content-center" style="padding-top:20px;">
+     <img src="/media/{{profile.vehicle_image1}}" height="130px" width="130px" style="margin-bottom:40px;border:1px solid black;border-radius:50%;"/>
+    </div>
+        {% if profile %}
+        <div class="d-flex justify-content-center">
+        <input type="email" name="email"   value={{profile.email}} readonly="True" style="border:none;">
+        </div>
+        <hr>
+        {% endif %}
+        <div class="title" name="pic" style="padding-left:40px;">Change Profile Picture
+        </div>
+        <div class="description">
+            <input type="file" name="user_image" class="form_control" style="margin-top:10px;border:1px solid black;width:240px;height:200";>
+        </div>
+       <hr>
+        <div class="" name="mybooking" style="padding-left:40px;">
+            <a href="/user/profile/" style="color:black;text-decoration:none;">My Booking</a>
+        </div>
+        <hr>
+        <div class="" name="account" style="padding-left:40px;">
+            <a href="/user/profile/" style="color:black;text-decoration:none;">Account</a>
+        </div>
+        <hr>
+        <div class="" name="Profileverify" style="padding-left:40px;">
+            <a href="/user/document/" style="color:black;text-decoration:none;" >Profile Verification</a>
+        </div>
+        <hr>
+        <div class="" name="Codriver" style="padding-left:40px;">
+            <a href="/user/codriver/" style="color:black;text-decoration:none;">Co-Driver</a>
+        </div>
+        <hr>
+    </div>
+    <div class="col-md-9" style="border:1px solid grey;">
+        <div class="form-layout">
+            <h3 class="d-flex justify-content-center" style="padding:10px;">My Account</h3>
+                    <div class="row">
+                    <div class="col-md-11" style="border:1px solid grey;margin-left:35px;margin-bottom:35px;border-radius:5px;">
+                <!-- form starts here -->
+                <div class="form-group">
+                </div>
+                <div class="clearfix">
+                </div>
+        </div>
+    </div>
+        </div>
+    </div>
+    </div>
+    </form>
+
+</div>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'indexMaster.html' %}
+{% block content %}
+<h3 class="d-flex justify-content-center" style="padding-top:100px;padding-bottom:100px;">Cancel Order</h3>
+<div class="container">
+<div class="row">
+
+    <div class="col-md-12">
+
+        <div class="form-layout">
+                <!-- form starts here -->
+        <form method="post" enctype="multipart/form-data">
+               {% csrf_token %}
+
+                <div class="form-group d-flex justify-content-center">
+                        <br/>
+                    <label><strong>Are you sure you want to cancel the booking?</strong></label>
+
+
+                </div>
+
+
+
+                 <div class="form-group d-flex justify-content-center" style="padding-top:50px;">
+                     <button type="submit" class="btn btn-info" class="form-control"  value="cancel"><strong>Cancel</strong></button>
+
+                </div>
+                <div class="clearfix">
+
+                </div>
+
+
+
+        </form>
+
+
+
+        </div>
+</div>
+</div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends 'indexMaster.html' %}
+{% block content %}
+        <div class="container" style="width:800px;height:auto;margin-left:400px;margin-top:100px;">
+            <div class="d-flex justify-content-center" style="font-size:40px;margin-top:30px;font-family: 'Libre Caslon Display', serif;">Booking Details</div>
+
+          	<div class="row" >
+
+            <div class="col-md-7" style="">
+				{% if view %}
+				<div class="" style="margin-left:50px;font-size:20px;margin-top:40px;">
+					Name  :  {{  view.vehicle_name}}
+				</div>
+				<div class="" style="margin-left:50px;font-size:20px;margin-top:20px;">
+				Model  : {{  view.vehicle_model}}
+				</div>
+				 {% if view.airbags == "0" %}
+				<div class="" style="margin-left:50px;font-size:20px;margin-top:20px;">
+		        Airbags  : {{"No"}}
+				</div>
+				{% else %}
+				<div class="" style="margin-left:50px;font-size:20px;margin-top:20px;">
+				Airbags  : {{"Yes"}}
+				</div>
+				{% endif %}
+
+				{% if view.abs == "0" %}
+				<div class="" style="margin-left:50px;font-size:20px;margin-top:20px;">
+		        Abs  : {{"No"}}
+				</div>
+				{% else %}
+				<div class="" style="margin-left:50px;font-size:20px;margin-top:20px;">
+				Abs  : {{"Yes"}}
+				</div>
+
+
+				{% endif %}
+
+				{% if view.transmission == "1" %}
+		        <div class="" style="margin-left:50px;font-size:20px;margin-top:20px;">
+					Transmission  : {{"Automatic"}}
+				</div>
+				{% elif view.tranmission == "2" %}
+				<div class="" style="margin-left:50px;font-size:20px;margin-top:20px;">
+					Transmission  : {{"Manual"}}
+				</div>
+				{% else %}
+				<div class="" style="margin-left:50px;font-size:20px;margin-top:20px;">
+					Transmission  :  {{"CVT"}}
+				</div>
+
+
+				{% endif %}
+				<div class="" style="margin-left:50px;font-size:20px;margin-top:20px;">
+					Seats  : {{  view.seats}}
+				</div>
+				{% endif %}
+		     </div>
+			<div class="col-md-5" style="margin-top:40px;">
+
+                   {% if view %}
+
+
+
+                <div class="" style="margin-left:60px;margin-right:50px;">
+                <img src="/media/{{view.vehicle_image1}}" style="width:270px;height:190px;">
+                </div>
+                 <div class="" style="margin-left:30px;font-size:20px;margin-top:10px;margin-right:50px;">
+			         Your Booking amount is (INR):  {{  view.price}}
+				</div>
+				  {% endif %}
+
+            </div>
+            </div>
+			 {% if book_key %}
+
+				<div class="" style="font-size:20px;margin-top:60px;">
+				<div class="" style="margin-left:50px;text-decoration:underline;font-size:20px;margin-top:20px;">
+					Bill Generation:
+				</div>
+				<div class="" style="margin-left:50px;font-size:20px;margin-top:20px;">
+					Security:{{book_key.security_amount}}
+				</div>
+			    <div class="" style="margin-left:50px;font-size:20px;margin-top:20px;">
+					Expected Pay:{{book_key.amount_exp }}
+				</div>
+			    <div class="" style="margin-left:50px;font-size:20px;margin-top:20px;">
+					Total Pay:{{book_key.total}}
+				</div>
+				</div>
+
+
+            <div class="d-flex justify-content-center mb-4" style="margin-bottom:50px;margin-top:50px;">
+                 {{ form.render }}
+            </div>
+			<div class="d-flex justify-content-center mt-4" style="margin-bottom:50px;">
+				<a href="/user/canceluser/?booking_id={{book_key.booking_id}}" >Cancel and go back </a>
+            </div>
+			{% endif %}
+        </div>
+		</div>
+		</div>
+{% endblock %}

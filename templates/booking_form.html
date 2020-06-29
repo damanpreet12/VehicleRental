@@ -1,0 +1,83 @@
+{% extends 'indexMaster.html' %}
+{% block content %}
+<form method="post">
+	{% csrf_token %}
+	<!--background-->
+	<div class="bg-agile">
+		<div class="left-agileits-w3layouts-img">
+			<h3>What we provide you</h3>
+			<ul>
+				<li><span>.</span>24x7 Vehicle service are available</li>
+				<li><span>.</span>GPS Tracking system</li>
+			</ul>
+			<p>- Your destination is our goal.</p>
+		</div>
+		<div class="book-appointment">
+
+			<div class="book-agileinfo-form">
+				<form action="#" method="post">
+
+
+					<div class="clear"></div>
+					<h2 class="sub-head-w3ls" style="margin-top:30px;">Booking Details</h2>
+					<div class="main-agile-sectns">
+						<div class='input-group date agileits-btm-spc ' id='startDate'>
+
+                          <div class="col-md-10" style="margin-left:-14px;">
+							<input type='text' placeholder="Pick-up date" class="form-control" name="startDate"  />
+						  </div>
+						  <div class="col-md-2">
+						    <span class="input-group-addon" style="margin-left:-24px;">
+								<span class="glyphicon glyphicon-calendar" style="margin-left:-8px;"></span>
+						    </span>
+						  </div>
+
+						</div>
+					</div>
+					<div class="main-agile-sectns">
+						<div class='input-group date agileits-btm-spc' id='endDate'>
+							<div class="col-md-10" style="margin-left:-14px;">
+								<input type='text' placeholder="Drop-off date" class="form-control" name="org_endDate" />
+
+							</div>
+							<div class="col-md-2" >
+								 <span class="input-group-addon" style="margin-left:-24px;">
+								<span class="glyphicon glyphicon-calendar" style="margin-left:-8px;"></span>
+								 </span>
+
+							</div>
+						</div>
+
+					</div>
+
+
+
+					<div class="main-agile-sectns" style="margin-top:40px;">
+						<div class="agileits-btm-spc form-text1" >
+							<select name="city" class="frm-field">
+								{% if bookcity %}
+								<option value="">Select City</option>
+								{% for i in bookcity %}
+								<option value="{{i.cityid}}">{{i.availablecity}}</option>
+								{% endfor %}
+								{% endif %}
+
+
+
+							</select>
+						</div>
+
+					</div>
+
+
+
+					<input type="submit" value="Submit" style="margin-top:40px;">
+					<input type="reset" value="Reset" style="margin-top:40px;">
+					<div class="clear"></div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</form>
+{% endblock %}

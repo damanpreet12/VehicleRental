@@ -1,0 +1,32 @@
+{% extends 'usermasterpage.html' %}
+
+{% block content %}
+<div class="container d-flex justify-content-center">
+ <div class="form_grping" style="margin-top:220px;">
+  <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+          <div class="top2">Trouble Logging In?</div>
+
+      </div>
+      <div class="form-group">
+          <label><i class="fa fa-user"></i><strong> Email </strong></label>
+
+          <input type="email" class="form-control" name="email" placeholder="Enter Email" required="">
+      </div>
+      {% if emailerror %}
+       <p>Email is incorrect</p>
+
+      {% endif %}
+      <div class="form-group">
+          Enter your email and we will send you otp to get back into your account.
+
+      </div>
+
+      <div class="form-group d-flex justify-content-center">
+          <button type="submit" class="btn btn-danger"><strong>Send Login OTP</strong></button>
+      </div>
+  </form>
+</div>
+</div>
+{% endblock %}

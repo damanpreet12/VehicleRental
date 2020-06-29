@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Car Rental</title>
+<!-- for-mobile-apps -->
+<!-- Start of  Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=004571c1-cf4b-4d25-8a2e-d6c9feb10992"> </script>
+<!-- End of  Zendesk Widget script -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Car Rental Responsive" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/user/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/user/css/galleryeffect.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="/assets/user/css/jquery.flipster.css">
+<link rel='stylesheet' href='/assets/user/css/dscountdown.css' type='text/css' media='all' />
+<link href="/assets/user/css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+<link href="/assets/user/css/font-awesome.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" type="text/css" />
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" type="text/css" />
+
+<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+</script>
+	<!-- //Meta tags -->
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="/assets/booking/css/jquery-ui.css" />
+	<!-- //Stylesheet -->
+	<!--fonts-->
+    <link href="/assets/user/css/font-awesome.css" rel="stylesheet">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+	<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Montserrat+Alternates:200,400,500,600,700" rel="stylesheet">
+    <link href="/assets/booking/css/wickedpicker.css" rel="stylesheet" type='text/css' media="all" />
+	<link href="/assets/booking/css/style.css" rel='stylesheet' type='text/css' />
+	<link href="/assets/user/css/style.css" rel="stylesheet" type="text/css" media="all" />
+   <link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+
+	 <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+   <script src="jquery-3.4.1.min.js"></script>
+
+</head>
+<body>
+
+<!-- banner -->
+
+<nav class="navbar navbar-expand-md navbar-dark " style="background-color:black;">
+     <div class="d-inline mt-10">
+		 <h1 style="width:190px;height:90px;padding:10px;margin-left:20px;"><a class="navbar-brand text-light" href="index.html"><span class="logo-v text-info">V</span><i class="fa fa-car" style="color:white"></i>Rental</a><p class="sub-cap" style="color:white">Drive to Any where</p></h1>
+	 </div>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <div class="navbar-nav ml-auto">
+            <a href="/user/index/" class="nav-item nav-link" style="font-size:20px;">Home</a>
+
+            {% if request.session.role == 1 or  request.session.role == 3%}
+			<a href="/manager/dashboard/" class="nav-item nav-link" style="font-size:20px;">Dashboard</a>
+
+
+			{% endif %}
+			<a href="/user/cards/" class="nav-item nav-link" style="font-size:20px;">Deals</a>
+
+			<a href="/user/signup/" class="nav-item nav-link" style="font-size:20px;">Sign Up</a>
+            <a href="/user/policy/" class="nav-item nav-link text-secondary" style="font-size:20px;">Policy</a>
+            {% if request.session.Authentication == True %}
+			<a href="/user/account/" class="nav-item nav-link" style="font-size:20px;">Profile</a>
+				{% endif %}
+			<div class="login">
+				{% if request.session.Authentication == True %}
+				<div id="logoutContainer"><a href="/user/logout/" id="logoutButton" class="nav-item nav-link" style="font-size:20px;"><span>Logout</span></a>
+					{% else %}
+					<div id="loginContainer"><a href="/user/login/"  id="loginButton" class="nav-item nav-link" style="font-size:20px;"><span>Login</span></a>
+						{% endif %}
+
+				    </div>
+			    </div>
+
+			</div>
+
+        </div>
+    </div>
+</nav>
+
+
+
+{% block content %}
+
+
+{% endblock %}
+
+
+<!-- /contact -->
+	<div class="map-w3ls" >
+		 <div class="wthree_title_agile">
+			 <h3> Contact <span>Us</span>  </h3>
+		</div>
+		<p class="sub_para">It’s time to drive</p>
+		<div class="contact-agile" id="contact">
+		<div class="contact-middle">
+					<h4>Say Hello</h4>
+					<form method="post">
+						{% csrf_token %}
+					<div class="form-agileinfo">
+					<div class="input-w3ls">
+						<p>Your Name</p>
+						<input type="text" name="name" placeholder="" required="" />
+					</div>
+					<div class="input-w3ls">
+						<p>Your Email</p>
+						<input type="email" name="email" placeholder="" required="" />
+					</div>
+					</div>
+					<div class="form-agileits-w3layouts">
+					<p>Your Comments</p>
+						<textarea  name="message" placeholder="" required="" ></textarea>
+							<input type="submit"   value="Send message">
+					</div>
+					<div class="clearfix"></div>
+					</form>
+				</div>
+				<div class="contact-left">
+					<h6>Sector 34-a ,Chandigarh</h6>
+					<p>8847310798</p>
+					<p><a href="mailto:dkaur4381@gmail.com">dkaur4381@gmail.com</a></p>
+					<h6>Opening Hours</h6>
+					<p>Monday-Sunday</p>
+						<p>12.00AM-12.00PM</p>
+				</div>
+
+		</div>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6859.898776774391!2d76.76120817593284!3d30.719823199903825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fedb31e8ed0a9%3A0x8141001a035f4071!2sSector+34%2C+Chandigarh!5e0!3m2!1sen!2sin!4v1565557168213!5m2!1sen!2sin"  frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div>
+<!-- //contact -->
+
+<!-- footer -->
+	<div class="newsletter">
+		<div class="container">
+			<div class="col-md-3 footer-grid">
+				<h3>About us</h3>
+				<p>VRental provides vehicles on rent both 2 wheelers and 4 wheelers.</p>
+				<div class="w3ls_newsletter_social">
+					<ul class="agileits_social_list">
+						<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-3 footer-grid">
+			     <h3>Write Us At</h3>
+					<ul>
+
+						<li><a class="scroll" href="#" style="text-decoration:none;"><span class="glyphicon glyphicon-envelope" aria-hidden="true" style="padding-right:10px;"></span>dkaur4381@gmail.com</li>
+						<li><a class="scroll" href="#" style="text-decoration:none;"><span class="glyphicon glyphicon-envelope" aria-hidden="true" style="padding-right:10px;"></span>pandher04@gmail.com</li>
+
+					</ul>
+			</div>
+			<div class="col-md-3 footer-grid">
+				<h3>Contact Us</h3>
+
+					<ul>
+
+						<li><a class="scroll" href="#" style="text-decoration:none;"><span class="glyphicon glyphicon-earphone" aria-hidden="true" style="padding-right:10px;"></span> 8874310798</a></li>
+						<li><a class="scroll" href="#" style="text-decoration:none;"><span class="glyphicon glyphicon-earphone" aria-hidden="true" style="padding-right:10px;"></span> 9915244277</a></li>
+
+					</ul>
+			</div>
+			<div class="col-md-3 footer-grid">
+				<h3>Guided By</h3>
+					<ul>
+
+						<li><a class="scroll" href="#home">Mr.Daljit Singh</br>(Industry Mentor)</a></li>
+
+					</ul>
+			</div>
+
+	</div>
+
+<!-- //footer -->
+
+<!-- js -->
+<script type="text/javascript" src="/assets/user/js/jquery-2.1.4.min.js"></script>
+<!--scripts-->
+<!-- Counter required files -->
+		<script type="text/javascript" src="/assets/user/js/dscountdown.min.js"></script>
+		<script src="/assets/user/js/demo-1.js"></script>
+		<script>
+			jQuery(document).ready(function($){
+				$('.demo2').dsCountDown({
+					endDate: new Date("December 24, 2020 23:59:00"),
+					theme: 'black'
+					});
+			});
+		</script>
+	<!-- //Counter required files -->
+
+	<!--//scripts-->
+<script type="text/javascript" src="/assets/user/js/move-top.js"></script>
+<script type="text/javascript" src="/assets/user/js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<!--banner Slider starts Here-->
+						<script src="/assets/user/js/responsiveslides.min.js"></script>
+							<script>
+								// You can also use "$(window).load(function() {"
+								$(function () {
+								  // Slideshow 4
+								  $("#slider3").responsiveSlides({
+									auto: true,
+									pager:true,
+									nav:false,
+									speed: 500,
+									namespace: "callbacks",
+									before: function () {
+									  $('.events').append("<li>before event fired.</li>");
+									},
+									after: function () {
+									  $('.events').append("<li>after event fired.</li>");
+									}
+								  });
+
+								});
+							 </script>
+							<script src="/assets/user/js/modernizr.custom.js"></script>
+
+
+	<script src="/assets/user/js/jquery.flipster.js"></script>
+<script>
+
+	$(function(){ $(".flipster").flipster({ style: 'carousel', start: 0 }); });
+
+
+</script>
+<!--banner Slider starts Here-->
+							 <!-- required-js-files-->
+<link href="/assets/user/css/owl.carousel.css" rel="stylesheet">
+<script src="/assets/user/js/owl.carousel.js"></script>
+<script>
+$(document).ready(function() {
+  $("#owl-demo").owlCarousel({
+	items :5,
+	itemsDesktop : [768,4],
+	itemsDesktopSmall : [414,3],
+	lazyLoad : true,
+	autoPlay : true,
+	navigation :true,
+
+	navigationText :  false,
+	pagination :false,
+
+  });
+
+});
+</script>
+								 <!--//required-js-files-->
+<!-- smooth scrolling -->
+<script type="text/javascript">
+	$(document).ready(function() {
+	/*
+		var defaults = {
+		containerID: 'toTop', // fading element id
+		containerHoverID: 'toTopHover', // fading element hover id
+		scrollSpeed: 1200,
+		easingType: 'linear'
+		};
+	*/
+	$().UItoTop({ easingType: 'easeOutQuart' });
+	});
+</script>
+<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- //smooth scrolling -->
+<script type="text/javascript" src="/assets/user/js/bootstrap.js"></script>
+
+<script type="text/javascript" src="/assets/booking/js/jquery-2.2.3.min.js"></script>
+
+	<!-- Calendar -->
+<script src="/assets/booking/js/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!--datetimepicker-->
+<script src="//ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js" type="text/javascript"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/lang/en-gb.js" type="text/javascript"></script>
+<script>
+<!--datetimepicker-->
+	jQuery(function () {
+        jQuery('#startDate').datetimepicker();
+        jQuery('#endDate').datetimepicker();
+
+        jQuery("#startDate").on("dp.change",function (e) {
+            jQuery('#endDate').data("DateTimePicker").setMinDate(e.date);
+        });
+        jQuery("#endDate").on("dp.change",function (e) {
+            jQuery('#startDate').data("DateTimePicker").setMaxDate(e.date);
+        });
+    });
+</script>
+
+ <script>
+            jQuery.noConflict();
+        // Code that uses other library's $ can follow here.
+ </script>
+
+    <script>
+          $(document).ready(function(){
+              $('.title').click(function(){
+              $(this).next().siblings('.description').slideUp();
+              $(this).next().slideToggle();
+              })
+
+          })
+
+    </script>
+
+
+	<!-- //Calendar -->
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+{% extends 'indexMaster.html' %}
+{% block content %}
+<h3 class="d-flex justify-content-center" style="padding-top:100px;padding-bottom:100px;">Profile</h3>
+<div class="container">
+<div class="row">
+
+    <div class="col-md-12">
+
+        <div class="form-layout">
+                <!-- form starts here -->
+        <form method="post" enctype="multipart/form-data">
+               {% csrf_token %}
+            <div style="padding:10px;">Various damage options:</div>
+            <div style="padding:10px;">
+            <strong>Level 0:</strong>
+              Minor damage typically means scratches, scrapes or dings. For example, a cracked headlight or small dent in your hood.
+            </div>
+            <div style="padding:10px;">
+            <strong>Level 1:</strong>
+              Moderate damage usually means large dents in the hood, fender or door of your car.
+            </div>
+            <div style="padding:10px;">
+            <strong>Level 2:</strong>
+              If the doors won't open, or if airbags have deployed, you likely have a level2 amount of damage to your car.
+                </div>
+            <div style="padding:10px;">
+            <strong>Major :</strong>
+              Severe damage is just like it sounds: very heavy damage. This includes broken axles and bent or twisted frames. In a severe damage situation, air bags have almost always deployed. Examples include if your car has rolled over, or a complete side of the car is damaged.
+            </div>
+                <div class="form-group" style="padding:10px;">
+                        <br/>
+                    <label><strong>Damage</strong></label>
+                    <select name="damage" id="field-2" required="true" class="form-control">
+                        <option value="">Choose..</option>
+                        <option value="0">Level 0</option>
+                        <option value="1">Level 1</option>
+                        <option value="2">Level 2</option>
+                        <option value="3">Major</option>
+                    </select>
+
+                </div>
+
+
+
+                 <div class="form-group d-flex justify-content-center" style="padding-top:50px;padding:10px;">
+                     <button type="submit" class="btn btn-info " value="returnbutton"><strong>Submit</strong></button>
+
+                </div>
+                <div class="clearfix">
+
+                </div>
+
+
+
+        </form>
+
+
+
+        </div>
+</div>
+</div>
+</div>
+
+
+
+{% endblock %}

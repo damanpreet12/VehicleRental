@@ -1,0 +1,73 @@
+{% extends 'adminmaster.html' %}
+{% block content %}
+<div class="content">
+<div class="women_main">
+ <div class="d-flex justify-content-center"><strong>User Bookings</strong></div>
+
+<br/>
+<div style="padding-top:2px;">
+
+<nav class="d-flex justify-content-center" aria-label="...">
+      <ul class="pagination pagination-lg ">
+        <li class="page-item"><a class="page-link" href="/manager/ubookings_all/">Back</a></li>
+        <li class="page-item active bg-info" aria-current="page"  href="/manager/ubookings_all/">
+          <span class="page-link" style="background-color:#17a2b8 ">
+            All
+            <span class="sr-only">(current)</span>
+          </span>
+        </li>
+         <li class="page-item"><a class="page-link" href="/manager/ubookings_active/">Active</a></li>
+        <li class="page-item"><a class="page-link" href="/manager/ubookings_cancel/">Cancelled</a></li>
+        <li class="page-item"><a class="page-link" href="/manager/ubookings_completed">Returned</a></li>
+
+
+      </ul>
+</nav>
+</div>
+<div style="overflow-x:auto;" class="container">
+<table class="table table-striped table-bordered mt-5">
+  <thead>
+    <tr>
+      <th>Booking Id</th>
+      <th>Invoice</th>
+      <th>Return Date</th>
+      <th>Cancel Date</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Vehicle Id</th>
+      <th>User email</th>
+      <th>Is Booking Active</th>
+      <th>Earnings</th>
+      <th>Cancel</th>
+      <th>Return</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% if booking %}
+   {% for i in booking %}
+    <tr>
+      <td>{{i.booking_id}}</td>
+      <td>{{i.invoice}}</td>
+      <td>{{i.return_date}}</td>
+      <td>{{i.cancellation_time}}</td>
+      <td>{{i.start_date}}</td>
+      <td>{{i.end_date}}</td>
+
+      <td>{{i.vehicle_id_id}}</td>
+      <td>{{i.email_id}}</td>
+      <td>{{i.is_active}}</td>
+      <td>{{i.earnings}}</td>
+      <td><a href="/user/cancel/?booking_id={{i.booking_id}}">Cancel</a></td>
+      <td><a href="/user/returnvehicle/?booking_id={{i.booking_id}}">Return</a></td>
+
+
+   {% endfor %}
+  {% endif %}
+  </tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+{% endblock %}

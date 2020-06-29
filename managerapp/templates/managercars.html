@@ -1,0 +1,87 @@
+{% extends 'adminmaster.html' %}
+{% block content %}
+<div class="content">
+<div class="women_main">
+	<!-- start content -->
+   <div class="w_content">
+		<div class="women">
+			<a href="#"><h4>Cars</h4></a>
+			<ul class="w_nav">
+						<li>Sort : </li>
+		     			<li><a class="active" href="#">Popular</a></li> |
+		     			<li><a href="#">New </a></li> |
+
+		     			<li><a href="#" >Price: Low High </a></li>
+		     			<div class="clear"></div>
+		     </ul>
+		     <div class="clearfix"></div>
+		</div>
+		<!-- grids_of_4 -->
+
+
+
+	   <div class="card-deck"  style="margin-left:30px;">
+			{% if vehinfodata %}
+			{% for i in vehinfodata %}
+
+	   <div class="card-deck" style="margin:40px;width:310px">
+
+	   <div class="card border-dark" >
+
+			<img src="/media/{{i.vehicle_image1}}" height="210px" width="278px" style="padding:4px;"/>
+
+			<div class="card-body">
+				<h6>Name  :  {{   i.vehicle_name}}</h6>
+				<h6>Model  : {{  i.vehicle_model}}</h6>
+				 {% if i.airbags == "0" %}
+		        <h6>Airbags  : {{"No"}}</h6>
+				{% else %}
+				<h6>Airbags  : {{"Yes"}}</h6>
+
+
+				{% endif %}
+
+				{% if i.abs == "0" %}
+		        <h6>Abs  : {{"No"}}</h6>
+				{% else %}
+				<h6>Abs  : {{"Yes"}}</h6>
+
+
+				{% endif %}
+
+				{% if i.transmission == "1" %}
+		        <h6>Transmission  : {{"Automatic"}}</h6>
+				{% elif i.tranmission == "2" %}
+				<h6>Transmission  : {{"Manual"}}</h6>
+				{% else %}
+				<h6>Transmission  :  {{"CVT"}}</h6>
+
+
+				{% endif %}
+				<h6>Seats  : {{  i.seats}}</h6>
+			    <h6>Price :  {{  i.price}}</h6>
+			</div>
+
+
+
+
+	   </div>
+	   </div>
+		    {% endfor %}
+	        {% endif %}
+	   </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+{% endblock %}
+
+
+

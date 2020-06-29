@@ -1,0 +1,353 @@
+{% extends 'adminmaster.html' %}
+{% block content %}
+
+					<!-- //header-ends -->
+
+				<!--content-->
+<div class="content">
+<div class="women_main">
+	<!-- start content -->
+	<div class="catalog">
+ <form enctype="multipart/form-data" method="post">
+		{% csrf_token %}
+
+		<div class="content tab">
+
+				<div class="fo-top">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Name</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control1" name="name" value="{{catalogdata.vehicle_name}}">
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+                <div class="fo-top">
+					<div class="form-group">
+						<label for="focusedinput" class="col-sm-2 control-label"> Vehicle Category</label>
+						<div class="col-sm-8">
+							<select name="cat_id" id="field-2"  required="true" class="form-control">
+								<option value="">Choose.</option>
+								{% if cn == 'Car' %}
+								<option value="1" selected>{{cn}}</option>
+								{% else %}
+								<option value="1">Car</option>
+								{% endif %}
+								{% if cn == 'Bike' %}
+								<option value="3" selected>{{cn}}</option>
+								{% else %}
+								<option value="3" >Bike</option>
+								{% endif %}
+								{% if cn == 'Scooter' %}
+								<option value="2" selected>{{cn}}</option>
+								{% else %}
+								<option value="2" >Scooter</option>
+								{% endif %}
+							</select>
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			    <div class="fo-top">
+					<div class="form-group">
+						<label for="focusedinput" class="col-sm-2 control-label"> Vehicle Sub-Category</label>
+						<div class="col-sm-8">
+							{% if subcatdata %}
+							<select name="subcat_id" id="field-2" required="true" class="form-control">
+								<option value="">Choose...</option>
+
+								{% for i in subcatdata %}
+								{% if subcatkey == i.subcat_id %}
+								<option value="{{i.subcat_id}}" selected>{{i.subcat_type}}</option>
+								{% else %}
+								<option value="{{i.subcat_id}}">{{i.subcat_type}}</option>
+								{% endif %}
+							    {% endfor %}
+							</select>
+							{% endif %}
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+                <div class="fo-top">
+					<div class="form-group">
+						<label for="focusedinput" class="col-sm-2 control-label">Company Name</label>
+						<div class="col-sm-8">
+							{% if companydata %}
+							<select name="company_id" id="field-2" required="true" class="form-control">
+								<option value="">Choose...</option>
+
+								{% for i in companydata %}
+								{% if companykey == i.company_id %}
+								<option value="{{i.company_id}}" selected>{{i.company_name}}</option>
+								{% else %}
+								<option value="{{i.company_id}}">{{i.company_name}}</option>
+								{% endif %}
+							    {% endfor %}
+							</select>
+							{% endif %}
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="fo-top">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Model</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control1" name="model" value="{{catalogdata.vehicle_model}}">
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+
+				<div class="fo-top">
+					<div class="form-group">
+						<label for="focusedinput" class="col-sm-2 control-label">ABS</label>
+						<div class="col-sm-8">
+							<select  name="abs" id="field2" required="true" class="form-control">
+								<option value="">Choose.</option>
+								{% if abskey == "1" %}
+								<option value="1" selected>Yes</option>
+								{% else %}
+								<option value="1">Yes</option>
+								{% endif %}
+								{% if abskey == "0" %}
+								<option value="0" selected>No</option>
+								{% else %}
+								<option value="0" >No</option>
+								{% endif %}
+								{% if abskey == "2" %}
+								<option value="2" selected>Dual</option>
+								{% else %}
+								<option value="2">Dual</option>
+								{% endif %}
+
+							</select>
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="fo-top">
+					<div class="form-group">
+						<label for="focusedinput" class="col-sm-2 control-label">Airbags</label>
+						<div class="col-sm-8">
+							<select name="airbags" id="field2" required="true" class="form-control">
+								<option value="">Choose.</option>
+								{% if airkeys == "1" %}
+								<option value="1" selected>Yes</option>
+								{% else %}
+								<option value="1">Yes</option>
+								{% endif %}
+								{% if airkeys == "0" %}
+								<option value="0" selected>No</option>
+								{% else %}
+								<option value="0" >No</option>
+								{% endif %}
+
+							</select>
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="fo-top">
+					<div class="form-group">
+						<label for="focusedinput" class="col-sm-2 control-label">Seats</label>
+						<div class="col-sm-8">
+							<select name="seats" id="field-2" required="true" class="form-control">
+								<option value="">Choose...</option>
+								{% if seatskey == "2" %}
+								<option value="2" selected>{{seatskey}}</option>
+								{% else %}
+								<option value="2">2</option>
+								{% endif %}
+								{% if seatskey == "4" %}
+								<option value="4" selected>{{seatskey}}</option>
+								{% else %}
+								<option value="4" >4</option>
+								{% endif %}
+								{% if seatskey == "5" %}
+								<option value="5" selected>{{seatskey}}</option>
+								{% else %}
+								<option value="5">5</option>
+								{% endif %}
+								{% if seatskey == "6" %}
+								<option value="6" selected>{{seatskey}}</option>
+								{% else %}
+								<option value="6" >6</option>
+								{% endif %}
+								{% if seatskey == "7" %}
+								<option value="7" selected>{{seatskey}}</option>
+								{% else %}
+								<option value="7">7</option>
+								{% endif %}
+
+							</select>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+                <div class="fo-top">
+					<div class="form-group">
+						<label for="focusedinput" class="col-sm-2 control-label">Transmission</label>
+						<div class="col-sm-8">
+							<select name="transmission" id="field-2"  required="true" class="form-control">
+								<option value="">Choose.</option>
+								{% if transmissiondata == '1' %}
+								<option value="1" selected>{{ "Automatic" }}</option>
+								{% else %}
+								<option value="1">Automatic</option>
+								{% endif %}
+								{% if transmissiondata == '2' %}
+								<option value="2" selected>{{ "Manual"}}</option>
+								{% else %}
+								<option value="2" >Manual</option>
+								{% endif %}
+								{% if transmissiondata == '3' %}
+								<option value="3" selected>{{ "CVT" }}</option>
+								{% else %}
+								<option value="3" >CVT</option>
+								{% endif %}
+							</select>
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			    <div class="fo-top">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Is Available</label>
+						<div class="col-sm-8">
+							<select name="available" id="field-2"  required="true" class="form-control">
+								{% if activekey == '1' %}
+								<option value="1" selected>{{ "Yes" }}</option>
+								{% else %}
+								<option value="1">Yes</option>
+								{% endif %}
+								{% if activekey == '0' %}
+								<option value="2" selected>{{ "No"}}</option>
+								{% else %}
+								<option value="2" >No</option>
+								{% endif %}
+							</select>
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			    <div class="fo-top">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Description</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control1" name="description" value="{{catalogdata.vehicle_description}}">
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			    <div class="fo-top">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Price</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control1" name="price" value="{{catalogdata.price}}">
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			    <div class="fo-top">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Images</label>
+						{% if catalogdata %}
+						<div class="col-sm-8">
+
+
+						<img src="/media/{{catalogdata.vehicle_image1}}" height="50px" width="50px" />
+
+						<input type="file" name="user_image1" class="form_control1">
+
+							<br/>
+
+						<img src="/media/{{catalogdata.vehicle_image2}}" height="50px" width="50px" />
+
+                        <input type="file" name="user_image2" class="form_control1">
+						<br/>
+
+
+						<img src="/media/{{catalogdata.vehicle_image3}}" height="50px" width="50px" />
+
+							{% endif %}
+                        <input type="file" name="user_image3" class="form_control1">
+
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+			<div>
+				 <button type="submit" class="btn btn-danger" class="form-control"  value="submit"><strong>Submit</strong></button>
+
+			</div>
+		</div>
+</form>
+
+	</div>
+
+
+
+	<!-- end content -->
+	<div class="foot-top">
+
+		<div class="col-md-6 s-c">
+			<li>
+				<div class="fooll">
+					<h1>follow us on</h1>
+				</div>
+			</li>
+			<li>
+				<div class="social-ic">
+					<ul>
+						<li><a href="#"><i class="facebok"> </i></a></li>
+						<li><a href="#"><i class="twiter"> </i></a></li>
+						<li><a href="#"><i class="goog"> </i></a></li>
+						<li><a href="#"><i class="be"> </i></a></li>
+							<div class="clearfix"></div>
+					</ul>
+				</div>
+			</li>
+				<div class="clearfix"> </div>
+		</div>
+		<div class="col-md-6 s-c">
+			<div class="stay">
+						<div class="stay-left">
+							<form>
+								<input type="text" placeholder="Enter your email" required="">
+							</form>
+						</div>
+						<div class="btn-1">
+							<form>
+								<input type="submit" value="join">
+							</form>
+						</div>
+							<div class="clearfix"> </div>
+			</div>
+		</div>
+			<div class="clearfix"> </div>
+
+</div>
+
+
+</div>
+			<!--content-->
+
+</div>
+
+{% endblock %}

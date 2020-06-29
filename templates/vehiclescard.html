@@ -1,0 +1,73 @@
+
+{% extends 'indexMaster.html' %}
+{% block content %}
+     <form method="post">
+		 {% csrf_token%}
+		 <nav class="d-flex justify-content-center" aria-label="...">
+			  <ul class="pagination pagination-lg ">
+				<li class="page-item active bg-info" aria-current="page">
+				  <span class="page-link" style="background-color:#17a2b8 ">
+					All
+					<span class="sr-only">(current)</span>
+				  </span>
+				</li>
+				<li class="page-item"><a class="page-link" href="/user/cars/">Cars</a></li>
+				<li class="page-item"><a class="page-link" href="/user/scooter/">Scooter</a></li>
+				<li class="page-item"><a class="page-link" href="/user/bikes/">Bikes</a></li>
+			  </ul>
+		 </nav>
+
+	   <div class="card-deck"  style="margin-left:210px;">
+			{% if vehinfodata %}
+			{% for i in vehinfodata %}
+
+	   <div class="card-deck" style="margin:40px;width:350px">
+
+	   <div class="card" >
+
+			<img src="/media/{{i.vehicle_image1}}" height="200px" width="350px" />
+
+			<div class="card-body">
+				<h6>{{i.vehicle_name}}</h6>
+				{% if i.isactive %}
+
+                <div class="d-flex justify-content-between">
+				<a  class="btn btn-outline-info" href="/user/bookingform/?vehicle_id={{i.vehicle_id}}" style="text-align:center" name="book"><strong>Book Now</strong></a>
+				<a class="btn btn-outline-info" href="/user/viewcard/?vehicle_id={{i.vehicle_id}}"  style="text-align:center" name="view"><strong>View More</strong></a>
+                {% endif %}
+
+				{% if not i.isactive %}
+
+                <div class="d-flex justify-content-center">
+				<a  class="btn btn-outline-info" href="" style="text-align:center" name="book"><strong>Sold Out</strong></a>
+				  {% endif %}
+
+				</div>
+			</div>
+
+
+
+
+
+	   </div>
+	   </div>
+		    {% endfor %}
+	        {% endif %}
+	   </div>
+	 </form>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

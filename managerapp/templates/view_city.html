@@ -1,0 +1,44 @@
+{% extends 'adminmaster.html' %}
+{% block content %}
+<div class="content">
+<div class="women_main">
+<div class="addCategory">
+<div class="container">
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">City Id</th>
+      <th scope="col">City Name </th>
+        {% if request.session.role == 1 %}
+      <th scope="col">Action</th>
+        {% endif %}
+    </tr>
+  </thead>
+  <tbody>
+  {% if citydata %}
+   {% for i in citydata %}
+    <tr>
+
+      <td>{{i.cityid}}</td>
+      <td>{{i.availablecity}}</td>
+        {% if request.session.role == 1 %}
+        <td><a href="/manager/updatecity/?cityid={{i.cityid}}">Update</a>/<a href="/manager/citydelete/?cityid={{i.cityid}}">Delete</a></td>
+        {% endif %}
+    </tr>
+   {% endfor %}
+  {% endif %}
+  </tbody>
+</table>
+
+
+
+
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+{% endblock %}

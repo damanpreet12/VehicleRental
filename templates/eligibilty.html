@@ -1,0 +1,43 @@
+{% extends 'indexMaster.html' %}
+{% block content %}
+<div class="d-flex justify-content-center">Eligibility Criteria</div>
+
+<nav class="d-flex justify-content-center" aria-label="...">
+      <ul class="pagination">
+        <li class="page-item active bg-info" aria-current="page">
+          <span class="page-link" style="background-color:#17a2b8 ">
+            Eligibility
+            <span class="sr-only">(current)</span>
+          </span>
+        </li>
+        <li class="page-item"><a class="page-link" href="/user/policy">Fee Policy</a></li>
+      </ul>
+		 </nav>
+<div class="card-deck" style="margin-left:10px;margin-right:15px;margin-top:25px;">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+
+    <p class="card-text">Customer should be 24 year and older to book luxary cars, else booking will be cancelled </p>
+
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+
+      <p class="card-text">Members must be 18 years of age or older</p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+      <p class="card-text">Member must possess a valid Light Motor Vehicle (Non Transport) Indian license and Aadhar card. </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+      <p class="card-text">Payments are only accepted through PayPal credit card, debit card or net banking. </p>
+  </div>
+</div>
+</div>
+
+
+{% endblock %}
