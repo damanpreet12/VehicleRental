@@ -2,6 +2,9 @@
 The Vehicle Rental System is web- based project to book vehicles online within few clicks only. This
 system includes various sub categories of the vehicles, as per the customer order and comfort, it place the order and deliver the car as per the location within the area.
 
+![image](https://user-images.githubusercontent.com/53335754/156913303-e2bea32b-ea61-4ae5-a505-872ca36e0e65.png)
+
+
 There are mainly Four Modules in the project:
 
 1). Admin Module: The Admin can manage the content of the website. Admin has access to
@@ -22,4 +25,8 @@ the vehicle, take vehicle on the rent and pay rent.
 In this module the user also known as business user can add, view, delete and edit his
 vehicles. He cannot view the other catalog of vehicles.
 
-![image](https://user-images.githubusercontent.com/53335754/156913277-aa4a2566-75ff-4e01-bb19-355c146198bd.png)
+
+
+![image](https://user-images.githubusercontent.com/53335754/156913356-941167b8-2d3c-463e-b64a-2cc8148fc887.png)
+
+
