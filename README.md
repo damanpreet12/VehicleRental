@@ -21,3 +21,5 @@ the vehicle, take vehicle on the rent and pay rent.
 4). Business User Module: The main working of this module is to give vehicles on the rent.
 In this module the user also known as business user can add, view, delete and edit his
 vehicles. He cannot view the other catalog of vehicles.
+
+![image](https://user-images.githubusercontent.com/53335754/156913277-aa4a2566-75ff-4e01-bb19-355c146198bd.png)
